@@ -16,6 +16,9 @@ const config = {
 		preprocess({
 			postcss: true
 		})
-	]
+	],
+	shadcn: {
+		componentPath: './src/lib/components/ui'
+	}
 };
 export default config;
