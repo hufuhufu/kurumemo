@@ -22,7 +22,6 @@
 
     onMount(() => {
         onAppend(gif_container, (nodes) => {
-            console.log('🚀 ~ file: +page.svelte:25 ~ onAppend ~ nodes:', nodes);
             nodes.forEach((node) => {
                 setTimeout(() => {
                     if (node instanceof HTMLImageElement) {
