@@ -15,7 +15,7 @@ WORKDIR /app
 COPY --from=builder /app/build build/
 COPY --from=builder /app/node_modules node_modules/
 COPY package.json .
-ENV HOST=127.0.0.1
+ENV HOST=0.0.0.0
 ENV PORT=4000
 ENV ORIGIN=https://kurumemo.hoofoo.icu
 ENV PROTOCOL_HEADER=x-forwarded-proto
