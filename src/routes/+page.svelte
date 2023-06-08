@@ -1,6 +1,6 @@
 <script>
     import { Button } from '$components/ui/button';
-    import { Card, CardHeader, CardContent, CardTitle, CardDescription } from '$components/ui/card';
+    import { Card, CardHeader, CardContent, CardTitle, CardDescription, CardFooter } from '$components/ui/card';
     import { onAppend } from '$lib/observer';
     import { createRNG } from '$lib/rand';
     import { onMount } from 'svelte';
@@ -66,15 +66,25 @@
 <div class="top-0 bottom-0 left-0 right-0 absolute m-auto max-w-[640px] max-h-[480px]">
     <Card class="items-center bg-purple-500 bg-opacity-60">
         <CardHeader class="items-center">
-            <CardTitle tag="h3" class="text-3xl">Kuru:Memories</CardTitle>
-            <CardDescription class="text-card-foreground"
-                >It's Herta' kurukuru, but with a twist!</CardDescription
+            <CardTitle
+                tag="h1"
+                class="text-background text-4xl font-bold font-comfortaa tracking-wide"
+                >Kuru:Memories</CardTitle
+            >
+            <CardDescription class="text-background font-open-sans"
+                >Just some vtuber doin the kurukuru</CardDescription
             >
         </CardHeader>
         <CardContent class="flex flex-col items-center space-y-7">
-            <h1 class="text-4xl">{countKuru}</h1>
-            <Button on:click={clickKuru} class="text-purple-50">KURUKURU</Button>
+            <h1 class="text-7xl font-extrabold text-purple-600 text-stroke font-nunito">
+                {countKuru}
+            </h1>
+            <Button on:click={clickKuru} class="text-purple-100">KURUKURU</Button>
         </CardContent>
+		<CardFooter class="text-background mt-10 p-1 px-4">
+			<span>v0.1.0-beta.1</span>
+			<a class="ml-3 link" href="/about">About</a>
+		</CardFooter>
     </Card>
 </div>
 
@@ -92,3 +102,7 @@
         alt="eci muter-muter kurukuruuu~"
     />
 </div>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Nunito:wght@700&family=Open+Sans&display=swap');
+</style>

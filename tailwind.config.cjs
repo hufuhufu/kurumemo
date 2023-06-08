@@ -54,6 +54,9 @@ module.exports = {
             },
             fontFamily: {
                 sans: [...fontFamily.sans],
+                nunito: ['Nunito', ...fontFamily.sans],
+                comfortaa: ['Comfortaa', 'cursive'],
+                'open-sans': ['"Open Sans"', ...fontFamily.sans],
             },
             transitionDuration: {
                 1500: '1500ms',
