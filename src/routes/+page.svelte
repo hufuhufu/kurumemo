@@ -2,10 +2,15 @@
     import { Button } from '$components/ui/button';
     import { Card, CardHeader, CardContent, CardTitle, CardDescription } from '$components/ui/card';
     import { onAppend } from '$lib/observer';
-    import { randomPickArray } from '$lib/rand';
+    import { createRNG } from '$lib/rand';
     import { onMount } from 'svelte';
 
     let countKuru = 0;
+
+    // 50:50 chance of triggering kurukuru or kururin,
+    // with a bit of chance of triggering one of them 4 times in a row at most
+    const soundRNG = createRNG([0, 0, 1, 1]);
+    const gifRNG = createRNG([0, 0, 1, 1]);
 
     /**
      * @type {HTMLImageElement}
@@ -15,12 +20,22 @@
      * @type {HTMLImageElement}
      */
     let eci_gif;
+
     /**
      * @type {HTMLDivElement}
      */
     let gif_container;
 
+    /**
+     * @type {HTMLImageElement[]}
+     */
+    let gifArray;
+
+    const soundArray = ['kururin', 'kurukuru'];
+
     onMount(() => {
+        gifArray = [chloe_gif, eci_gif];
+
         onAppend(gif_container, (nodes) => {
             nodes.forEach((node) => {
                 setTimeout(() => {
@@ -36,14 +51,14 @@
     function clickKuru() {
         countKuru++;
 
-        const kuru_sound = new Audio(`/audio/${randomPickArray(['kururin', 'kurukuru'])}.mp3`);
+        const kuru_sound = new Audio(`/audio/${soundArray[soundRNG()]}.mp3`);
         kuru_sound.volume = 0.3;
         kuru_sound.play();
         kuru_sound.addEventListener('ended', function () {
             this.remove();
         });
 
-        const kuru_gif = randomPickArray([chloe_gif, eci_gif]).cloneNode();
+        const kuru_gif = gifArray[gifRNG()].cloneNode();
         gif_container.appendChild(kuru_gif);
     }
 </script>
