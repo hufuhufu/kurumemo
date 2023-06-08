@@ -82,7 +82,7 @@
             <Button on:click={clickKuru} class="text-purple-100">KURUKURU</Button>
         </CardContent>
 		<CardFooter class="text-background mt-10 p-1 px-4">
-			<span>v0.1.0-beta.1</span>
+			<span>v0.1.0</span>
 			<a class="ml-3 link" href="/about">About</a>
 		</CardFooter>
     </Card>

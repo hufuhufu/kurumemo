@@ -39,7 +39,7 @@
                 >Change Log</CardTitle
             >
             <div>
-                <span class="text-2xl font-bold font-comfortaa tracking-wide">v0.1.0-beta.1</span>
+                <span class="text-2xl font-bold font-comfortaa tracking-wide">v0.1.0</span>
                 <ul>
                     <li>Basic functionality of the kurukuru button (Counter, Sound, Animation).</li>
                     <li>Known issue:</li>
